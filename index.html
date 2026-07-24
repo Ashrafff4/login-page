@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glassmorphic Dark Mode Authentication Portal with Premium Animations">
+  <title>Aura Auth | Animated Glassmorphic Interface</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="auth-card">
+    <div class="forms-wrapper">
+
+
+      <section class="form-box active" id="login-form">
+        <div class="auth-header">
+          <h2>Welcome Back</h2>
+          <p>Please enter your credentials to log in</p>
+        </div>
+        <form onsubmit="handleFormSubmit(event, 'Login Successful!')">
+          <div class="input-group">
+            <input type="email" id="login-email" placeholder=" " required autocomplete="off">
+            <label for="login-email">Email Address</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="login-password" placeholder=" " required>
+            <label for="login-password">Password</label>
+          </div>
+          <div class="options-row">
+            <label class="remember-me">
+              <input type="checkbox"> Remember me
+            </label>
+            <span class="switch-link" onclick="switchForm('forgot')">Forgot password?</span>
+          </div>
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+        <div class="footer-text">
+          Don't have an account? <span class="switch-link" onclick="switchForm('signup')">Sign up</span>
+        </div>
+      </section>
+
+      <section class="form-box" id="signup-form">
+        <div class="auth-header">
+          <h2>Create Account</h2>
+          <p>Join us by creating your new account</p>
+        </div>
+        <form onsubmit="handleFormSubmit(event, 'Account created successfully!')">
+          <div class="input-group">
+            <input type="text" id="signup-name" placeholder=" " required autocomplete="off">
+            <label for="signup-name">Full Name</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="signup-email" placeholder=" " required autocomplete="off">
+            <label for="signup-email">Email Address</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="signup-password" placeholder=" " required>
+            <label for="signup-password">Password</label>
+          </div>
+          <button type="submit" class="btn-primary">Create Account</button>
+        </form>
+        <div class="footer-text">
+          Already have an account? <span class="switch-link" onclick="switchForm('login')">Sign in</span>
+        </div>
+      </section>
+
+      <section class="form-box" id="forgot-form">
+        <div class="auth-header">
+          <h2>Reset Password</h2>
+          <p>Enter your email to receive a reset link</p>
+        </div>
+        <form onsubmit="handleFormSubmit(event, 'Password reset link sent to your email!')">
+          <div class="input-group">
+            <input type="email" id="forgot-email" placeholder=" " required autocomplete="off">
+            <label for="forgot-email">Registered Email</label>
+          </div>
+          <button type="submit" class="btn-primary" style="margin-top: 10px;">Send Reset Link</button>
+        </form>
+        <div class="footer-text">
+          Remembered your password? <span class="switch-link" onclick="switchForm('login')">Back to login</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast">Message notification</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
